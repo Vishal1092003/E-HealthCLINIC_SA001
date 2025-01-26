@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from 'react';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import Map from './pages/Map';
+import WeatherForcast from './pages/WeatherForcast';
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+         <Routes>
+           <Route path='/' element={<Dashboard/>}/>
+           <Route path='/map' element={<Map/>}/>
+           <Route path='/weatherForcast' element={<WeatherForcast/>}/>
+         </Routes>
+    </BrowserRouter>
+    
   );
 }
 
 export default App;
+
+
+
+
+
+/*
+The syntax <> </> in React is a shorthand for a React Fragment. React Fragments are used to group multiple elements without adding an extra node to the DOM.
+*/
