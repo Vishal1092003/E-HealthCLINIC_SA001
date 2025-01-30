@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-
+import leafletWeather from './leafletWeather'
+import Newmap from './Newmap'
 function Dashboard() {
   return (
     <div>
@@ -12,6 +13,11 @@ function Dashboard() {
          <p>
             see the forcast click on : 
             <NavLink to='/weatherForcast'>Weather Forcast</NavLink>
+         </p>
+         <br/>
+          <p>
+            see the new map click on : 
+            <NavLink to='/newmap'>new map </NavLink>
          </p>
     </div>
   )

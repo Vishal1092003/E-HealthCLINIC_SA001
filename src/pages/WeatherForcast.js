@@ -1,6 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function WeatherForcast() {
+    
+      let api='AIzaSyD3sIw78SH-ZEx3lJMiFlz804pozD2GlLU';
+
+const fetch=async(api)=>{
+   try{
+      const result=await fetch(`${api}`);
+   const data=await result.json();
+   console.log(data);
+   return data;
+   }catch(error){
+     console.log(error);
+     return error;
+   }
+}
+
+
+      fetch(api)
+      .then((result)=>{
+        console.log(result);
+      })
+      .catch((err)=>{
+        console.log(err);
+      })
+
+
   return (
     <div>
         {/* <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
@@ -22,6 +47,20 @@ function WeatherForcast() {
             onClick={findWeatherDetails}
            > CHECK</button>
       </div> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   )
 }

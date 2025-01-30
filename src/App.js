@@ -3,6 +3,9 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import Map from './pages/Map';
 import WeatherForcast from './pages/WeatherForcast';
+// import leafletWeather from './pages/leafletWeather';
+import Newmap from './pages/Newmap';
+
 function App() {
 
   return (
@@ -11,6 +14,8 @@ function App() {
            <Route path='/' element={<Dashboard/>}/>
            <Route path='/map' element={<Map/>}/>
            <Route path='/weatherForcast' element={<WeatherForcast/>}/>
+          <Route path='/leaflet' element={<leafletWeather/>}/>
+           <Route path='/newmap' element={<Newmap/>}/>
          </Routes>
     </BrowserRouter>
     
