@@ -5,6 +5,7 @@ import Map from './pages/Map';
 import WeatherForcast from './pages/WeatherForcast';
 // import leafletWeather from './pages/leafletWeather';
 import Newmap from './pages/Newmap';
+import UrlSortner from './pages/UrlSortner';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
            <Route path='/weatherForcast' element={<WeatherForcast/>}/>
           <Route path='/leaflet' element={<leafletWeather/>}/>
            <Route path='/newmap' element={<Newmap/>}/>
+           <Route path='/url' element={<UrlSortner/>}/>
          </Routes>
     </BrowserRouter>
     

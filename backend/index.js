@@ -1,5 +1,12 @@
 const express=require('express');
+const dbconnect = require('./database/mongodb');
+const posturl=require("./Routes/InputUrlRoute")
 const app=express();
+const cors=require('cors');
+
+app.use(express.json());
+app.use(cors());
+
 const port=4000;
 
 app.listen(port,()=>{
@@ -9,6 +16,13 @@ app.listen(port,()=>{
 app.get('/',(req,res)=>{
      res.send(`server stated at ${port}`);
 })
+
+
+app.use('/posturl',posturl);
+
+dbconnect();
+
+
 
 
 

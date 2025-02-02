@@ -1,7 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import leafletWeather from './leafletWeather'
-import Newmap from './Newmap'
+// import leafletWeather from './leafletWeather'
+// import Newmap from './Newmap'
+// import UrlSortner from './UrlSortner'
+// import WeatherForcast from './WeatherForcast'
 function Dashboard() {
   return (
     <div>
@@ -19,6 +21,11 @@ function Dashboard() {
             see the new map click on : 
             <NavLink to='/newmap'>new map </NavLink>
          </p>
+         <p>
+          To make url shorter
+           <NavLink to='/url'>url shortner</NavLink>
+         </p>
+
     </div>
   )
 }
