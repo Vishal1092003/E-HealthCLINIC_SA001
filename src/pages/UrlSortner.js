@@ -8,19 +8,24 @@ function UrlSortner() {
   
 const AddurlDetails=async()=>{
   try{
-const response=await fetch('http://localhost:4000/posturl',{
+const response=await fetch('http://localhost:8000/posting/posturl',{
     method:"POST",
     headers:{
       'Content-Type':"application/json"
     },
     body:JSON.stringify({
       url:url,
-      changeTo:changeTo
+      finalUrl:changeTo
     })
+  }).then((result)=>{
+    console.log("result ",result);
+  })
+  .catch((error)=>{
+    console.log("error is ",error);
   })
 
    const data=await response.json();
-   console.log(data);
+   console.log("data is  ", data);
 
   }catch(error){
    console.error('Error:', error);

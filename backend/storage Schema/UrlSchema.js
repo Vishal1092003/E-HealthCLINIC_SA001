@@ -1,13 +1,14 @@
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 
-const urlschema=new mongoose.Schema({
-    url:{
-        type:String,
-        require:true
+const urlSchema = new mongoose.Schema({
+    url: {
+        type: String,
+        required: true  
     },
-    finalUrl:{
-        type:String,
-        require:true
+    finalUrl: {
+        type: String,
+        required: true
     }
-})
-module.exports=mongoose.model('urlschema',urlschema);
+});
+
+module.exports = mongoose.model('Url', urlSchema); 

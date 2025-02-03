@@ -10,8 +10,7 @@ const dbconnect=async()=>{
     })
     .then(()=>{
         console.log("conneted to Mongo db");
-    }
-    )
+    })
     .catch((error)=>{
         console.log("error is mongo db connection ", error);
     })
