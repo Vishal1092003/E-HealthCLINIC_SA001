@@ -3,7 +3,12 @@ const dbconnect = require('./database/mongodb');
 const posturl=require("./Routes/InputUrlRoute");
 const app=express();
 const cors=require('cors');
-
+const signup=require("./Routes/Users/Singup")
+const login=require("./Routes/Users/Login")
+const DoctorSignUp=require("./Routes/doctors/DoctersSignUp")
+const DoctorLogin=require("./Routes/doctors/DoctorsLogin")
+// const cookie_parser=require("cookie-parser");
+// app.use(cookie_parser());
 app.use(express.json());
 app.use(cors());
 
@@ -18,6 +23,11 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/posting',posturl);
+app.use(signup);
+app.use(login);
+app.use(DoctorSignUp);
+app.use(DoctorLogin);
+
 
 dbconnect();
 

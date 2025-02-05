@@ -25,6 +25,15 @@ function Dashboard() {
           To make url shorter
            <NavLink to='/url'>url shortner</NavLink>
          </p>
+         <p>
+          To learn about cookie signup
+           <NavLink to='/signup'>User SignUp</NavLink>
+         </p>
+         <p>
+          To learn about cookie  signin
+           <NavLink to='/signup'>User SignIn</NavLink>
+         </p>
+
 
     </div>
   )
