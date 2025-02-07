@@ -31,9 +31,13 @@ function Dashboard() {
          </p>
          <p>
           To learn about cookie  signin
-           <NavLink to='/signup'>User SignIn</NavLink>
+           <NavLink to='/signin'>User SignIn</NavLink>
          </p>
 
+           <p>
+          To print your result
+           <NavLink to='/result'>PRINT RESULT</NavLink>
+         </p>
 
     </div>
   )

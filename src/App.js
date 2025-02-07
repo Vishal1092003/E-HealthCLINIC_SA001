@@ -8,6 +8,7 @@ import Newmap from './pages/Newmap';
 import UrlSortner from './pages/UrlSortner';
 import SignUp from './pages/SignUp';
 import Signin from './pages/Signin';
+import Result from './pages/Result';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
            <Route path='/url' element={<UrlSortner/>}/>
            <Route path='/Signup' element={<SignUp/>}/>
              <Route path='/Signin' element={<Signin/>}/>
-
+             <Route path='/result' element={<Result/>}/>
          </Routes>
     </BrowserRouter>
     

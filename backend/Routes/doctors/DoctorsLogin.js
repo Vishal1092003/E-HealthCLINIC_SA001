@@ -48,7 +48,7 @@ router.post("/doctors/login",async(req,res)=>{
       //      secure:true
       //     }
       // )
-      // res.send("jwt token stroed in cookie")
+    
   
               
   
