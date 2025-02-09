@@ -8,6 +8,7 @@ const login=require("./Routes/Users/Login")
 const DoctorSignUp=require("./Routes/doctors/DoctersSignUp")
 const DoctorLogin=require("./Routes/doctors/DoctorsLogin")
 const appointment=require("./Routes/doctor and user/Appointment")
+const allDoctorDetails=require("./Routes/doctors/GetDoctordetails");
 // const cookie_parser=require("cookie-parser");
 // app.use(cookie_parser());
 app.use(express.json());
@@ -29,7 +30,7 @@ app.use(login);
 app.use(DoctorSignUp);
 app.use(DoctorLogin);
 app.use(appointment);
-
+app.use(allDoctorDetails);
 
 dbconnect();
 

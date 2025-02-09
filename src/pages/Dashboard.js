@@ -38,6 +38,10 @@ function Dashboard() {
           To print your result
            <NavLink to='/result'>PRINT RESULT</NavLink>
          </p>
+         <p>
+         To Make an appointment
+          <NavLink to='/appointment'>Appointment</NavLink>
+         </p>
 
     </div>
   )

@@ -9,6 +9,8 @@ import UrlSortner from './pages/UrlSortner';
 import SignUp from './pages/SignUp';
 import Signin from './pages/Signin';
 import Result from './pages/Result';
+import Appointment from './pages/Appointment';
+import BookAppointment from './pages/BookAppointment';
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
            <Route path='/Signup' element={<SignUp/>}/>
              <Route path='/Signin' element={<Signin/>}/>
              <Route path='/result' element={<Result/>}/>
+             <Route path='/appointment' element={<Appointment/>}/>
+             <Route path='/book-appointment' element={<BookAppointment/>}/>
          </Routes>
     </BrowserRouter>
     

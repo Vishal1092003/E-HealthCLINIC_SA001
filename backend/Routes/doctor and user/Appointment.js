@@ -5,9 +5,8 @@ const appointment=require("../../storage Schema/Appointment");
 router.post("/appointment",async(req,res)=>{
       
   try{
-      const {time,date,appointment_duration}=req.body;
-      const doctor_id="sdfghj";
-      const user_id="qwert";
+      const {time,date,appointment_duration,doctor_id,user_id}=req.body;
+      
     if(!time){
         return res.status(400).json({
             success:false,
@@ -21,17 +20,17 @@ router.post("/appointment",async(req,res)=>{
         })
     }
 
-    const generateRandomId = () => Math.random().toString(36).substr(2, 4).toUpperCase();
+    //  let generateRandomId = () => Math.random().toString(36).substr(2, 4).toUpperCase();
 
-      console.log(generateRandomId());
+    //   console.log(generateRandomId());
 
 
-    const check_randomid_Alias=await appointment.findOne({generateRandomId});
-    while(check_randomid_Alias){
-        generateRandomId = () => Math.random().toString(36).substr(2, 4).toUpperCase();
-        check_randomid_Alias=await appointment.findOne({generateRandomId});
-    }
-
+    // let check_randomid_Alias=await appointment.findOne({generateRandomId});
+    // while(check_randomid_Alias){
+    //     generateRandomId = () => Math.random().toString(36).substr(2, 4).toUpperCase();
+    //     check_randomid_Alias=await appointment.findOne({generateRandomId});
+    // }
+   const generateRandomId="ABCD"
     const NewAppointment=await appointment(
         {
             appointment_id:generateRandomId,

@@ -23,7 +23,8 @@ const Appointment=new mongoose.Schema({
     },
     appointment_duration:{
         type:Number,  
-        required:true
+        required:false,
+        default:30
     },
     appointment_status:{
          type:String,
