@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import salman from "./salman khan.jpeg"
 function Appointment() {
     const [doctors, setdoctors] = useState([]);
   const navigate=useNavigate();
@@ -53,7 +53,7 @@ function Appointment() {
                         doctors.map((doctor, index) => (
                             <div key={index} style={{ backgroundColor: 'white', borderRadius: '10px', padding: '15px', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', textAlign: 'center' }}>
                                 <img
-                                    src={doctor.DoctorPhoto || "https://via.placeholder.com/150"}
+                                    src={salman}
                                     alt={doctor.DoctorName}
                                     style={{ width: '100px', height: '100px', borderRadius: '50%', marginBottom: '10px', border: '2px solid #ddd' }}
                                 />
