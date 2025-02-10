@@ -42,6 +42,10 @@ function Dashboard() {
          To Make an appointment
           <NavLink to='/appointment'>Appointment</NavLink>
          </p>
+         <p>
+         To Make an appointment
+          <NavLink to='/homepage'>Home Page</NavLink>
+         </p>
 
     </div>
   )

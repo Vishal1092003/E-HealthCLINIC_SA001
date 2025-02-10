@@ -11,6 +11,7 @@ import Signin from './pages/Signin';
 import Result from './pages/Result';
 import Appointment from './pages/Appointment';
 import BookAppointment from './pages/BookAppointment';
+import Homepage from './pages/Homepage';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
              <Route path='/result' element={<Result/>}/>
              <Route path='/appointment' element={<Appointment/>}/>
              <Route path='/book-appointment' element={<BookAppointment/>}/>
+             <Route path='/homepage' element={<Homepage/>}/>
          </Routes>
     </BrowserRouter>
     

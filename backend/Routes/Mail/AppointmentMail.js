@@ -16,9 +16,9 @@ router.post("/sendmail",async(req,res)=>{
 })
 
 for(let i=0;i<1;i++){
-let info=await transporter.sendMail({
+var info=await transporter.sendMail({
      from: '"👻" <codewithme2615@gmail.com>', // sender address
-    to: "2022ugcs013@nitjsr.ac.in", // list of receivers
+    to: "2022ugcs035@nitjsr.ac.in", // list of receivers
     subject: "Hello ✔", 
     text: "Hello world?", 
     html: "<b>Hello world?</b>", 
