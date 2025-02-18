@@ -1,10 +1,33 @@
-import React, { useState } from "react";
+import React, { useState ,useRef,useEffect} from "react";
+import styled, { keyframes } from 'styled-components';
+import Carousal_mainsection from "./Carousal_mainsection";
+import Footer from "./Footer";
 import imageSrc from './salman khan.jpeg'
 import img1 from "./img3 (1).jpg"
 import img2 from "./img3 (2).jpg"
 import img3 from "./img3 (3).jpg"
+import Carousel from "./Carousal";
+
 
 function Homepage() {
+    const runnerRef = useRef(null);
+
+  // useEffect(() => {
+  //   const runner = runnerRef.current;
+  //   let position = 0;
+  //   const speed = 2; // Speed of the animation
+
+  //   const animate = () => {
+  //     position += speed;
+  //     if (position > window.innerWidth) {
+  //       position = -100; // Reset position after exiting screen
+  //     }
+  //     runner.style.left = `${position}px`;
+  //     requestAnimationFrame(animate);
+  //   };
+
+  //   animate();
+  // }, []);
   const [hoveredMenu, setHoveredMenu] = useState(null);
   const events = [
   { title: "First Sunday of the Month Kickoff", date: "Jun. 09-12, 2021", time: "8:30 AM - 9:30 PM", image: img2 },
@@ -20,9 +43,10 @@ function Homepage() {
   const handleMouseLeave = () => {
     setHoveredMenu(null);
   };
+ 
 
   return (
-    <div style={{ backgroundColor: "#0a0a0b", color: "white", minHeight: "100vh", padding: "20px",fontFamily:""}}>
+    <div style={{ backgroundColor: "", color: "Black", minHeight: "100vh", padding: "20px",fontFamily:"",}}>
       {/* Navbar */}
 
     <nav style={{ 
@@ -31,6 +55,8 @@ function Homepage() {
   alignItems: "center", 
   padding: "10px 50px", 
   position: "relative",
+  // "backgroundColor":"whitesmoke"
+  
 //   backgroundColor: "#1a1a1a"
 }}>
   <h2 style={{ 
@@ -45,12 +71,12 @@ function Homepage() {
   }}>
     CHITRABINDOO
   </h2>
-  <div style={{ display: "flex", gap: "20px", position: "relative" }}>
+  <div style={{ display: "flex", gap: "20px", position: "relative", color: "black",  }}>
     {["ABOUT", "GET INVOLVED", "MINISTRIES", "EVENTS", "GIVING"].map((menu, index) => (
-      <div key={index} style={{ position: "relative" }} onMouseEnter={() => handleMouseEnter(menu)} onMouseLeave={handleMouseLeave}>
+      <div key={index} style={{ position: "relative" , color: "black", }} onMouseEnter={() => handleMouseEnter(menu)} onMouseLeave={handleMouseLeave}>
         <a href="#" style={{ 
           textDecoration: "none", 
-          color: "white", 
+          color: "black", 
           fontWeight: hoveredMenu === menu ? "bold" : "normal", 
           transition: "0.3s ease-in-out" 
         }}>
@@ -59,7 +85,8 @@ function Homepage() {
       </div>
     ))}
   </div>
-  <button style={{ 
+  <div>
+    <button style={{ 
     backgroundColor: "white", 
     color: "black", 
     padding: "10px 20px", 
@@ -70,26 +97,49 @@ function Homepage() {
     transition: "0.3s ease-in-out",
     boxShadow: "2px 2px 10px rgba(255, 255, 255, 0.2)"
   }}>
-    Watch
+    Sign Up
   </button>
+   <button style={{ 
+    margin:"10px",
+    backgroundColor: "white", 
+    color: "black", 
+    padding: "10px 20px", 
+    borderRadius: "8px", 
+    border: "none", 
+    fontWeight: "bold", 
+    cursor: "pointer", 
+    transition: "0.3s ease-in-out",
+    boxShadow: "2px 2px 10px rgba(255, 255, 255, 0.2)"
+  }}>
+    Login
+  </button>
+  </div>
+ 
 </nav>
 
 
       {/* Main Section */}
-      <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", height: "80vh", paddingLeft: "100px" }}>
-        <h1 style={{ fontSize: "50px", fontWeight: "bold", maxWidth: "500px", textAlign: "left" }}>A house of hope and healing</h1>
-        <div style={{ marginTop: "20px", display: "flex", gap: "10px" }}>
-          <button style={{ backgroundColor: "#5c6cff", color: "white", padding: "12px 25px", borderRadius: "8px", border: "none", fontSize: "16px", cursor: "pointer" }}>
-            I'm New
-          </button>
-          <button style={{ backgroundColor: "white", color: "black", padding: "12px 25px", borderRadius: "8px", border: "none", fontSize: "16px", cursor: "pointer" }}>
-            Watch
-          </button>
-        </div>
-      </div>
+     <Carousal_mainsection/>
+ 
 
-      {/* Upcoming Events Section */}
-   <div style={{ display: "flex", gap: "20px", overflowX: "auto" }}>
+
+   
+   <Carousel/>
+
+   <Footer/>
+
+
+
+
+
+
+
+
+
+
+
+
+   {/* <div style={{ display: "flex", gap: "20px", overflowX: "auto","backgroundColor":"whitesmoke","color":"black", "backgroundColor":"whitesmoke" }}>
   {events.map((event, index) => (
     <div key={index} style={{ width: "300px", flexShrink: 0 }}>
       <img src={event.image} alt={event.title} style={{ width: "80%" ,height:"60%"}} />
@@ -98,10 +148,10 @@ function Homepage() {
       {event.time && <p>⏰ {event.time}</p>}
     </div>
   ))}
-</div>
+</div> */}
 
       {/* Our Mission Section */}
-      <div style={{ backgroundColor: "#f5f5f5", color: "black", padding: "80px 50px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      {/* <div style={{ backgroundColor: "#f5f5f5", color: "black", padding: "80px 50px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
         <h2 style={{ fontSize: "48px", fontWeight: "bold", marginBottom: "30px" }}>Our Mission</h2>
         <p style={{ fontSize: "20px", maxWidth: "900px", marginBottom: "30px", lineHeight: "1.6" }}>
           The mission of Lifehouse Church is all about spreading the Gospel of Jesus Christ.
@@ -110,8 +160,8 @@ function Homepage() {
         <div style={{ display: "flex", justifyContent: "center", width: "100%", maxWidth: "900px" }}>
           <img src="/path-to-your-mission-image.jpg" alt="Our Mission" style={{ width: "100%", maxHeight: "400px", objectFit: "cover", borderRadius: "10px" }} />
         </div>
-      </div>
-       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh", backgroundColor: "#f8f8f8" }}>
+      </div> */}
+       {/* <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh", backgroundColor: "#f8f8f8" }}>
       <div style={{ 
         position: "relative", 
         width: "90%", 
@@ -136,10 +186,10 @@ function Homepage() {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
 
 {/* next */}
- <div style={{ padding: "40px", backgroundColor: "#f8f8f8" }}>
+ {/* <div style={{ padding: "40px", backgroundColor: "#f8f8f8" }}>
       <h2 style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "20px" }}>Ministries</h2>
       <div style={{ 
         display: "grid", 
@@ -176,48 +226,9 @@ function Homepage() {
           </div>
         ))}
       </div>
-    </div>
-{/* footer */}
- <div style={{ padding: "40px", backgroundColor: "#f8f8f8" }}>
-      <footer style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
-        gap: "20px",
-        padding: "40px",
-        backgroundColor: "#fff",
-        borderTop: "1px solid #ddd",
-        color: "#000"
-      }}>
-        <div>
-          <h4 style={{ fontSize: "18px", fontWeight: "bold", color: "#000" }}>Service Times</h4>
-          <p style={{ color: "#000" }}>Wed 5:30pm</p>
-          <p style={{ color: "#000" }}>Sat 5:30pm</p>
-          <p style={{ color: "#000" }}>Sun 10:00am</p>
-        </div>
-        <div>
-          <h4 style={{ fontSize: "18px", fontWeight: "bold", color: "#000" }}>Contact</h4>
-          <p style={{ color: "#000" }}>(000) 000-0000</p>
-          <p style={{ color: "#000" }}>info@lifehouse.church</p>
-          <p style={{ color: "#000" }}>Contact Us</p>
-        </div>
-        <div>
-          <h4 style={{ fontSize: "18px", fontWeight: "bold", color: "#000" }}>Location</h4>
-          <p style={{ color: "#000" }}>1600 Pennsylvania Avenue NW</p>
-          <p style={{ color: "#000" }}>Washington, DC 20500</p>
-        </div>
-        <div>
-          <h4 style={{ fontSize: "18px", fontWeight: "bold", color: "#000" }}>Stay Connected</h4>
-          <input type="email" placeholder="name@email.com" style={{ padding: "8px", width: "70%" }} />
-          <button style={{ padding: "8px 12px", backgroundColor: "#000", color: "#fff", border: "none", marginLeft: "8px" }}>Subscribe</button>
-          <p style={{ color: "#000" }}>Subscribe to our newsletter for updates.</p>
-        </div>
-      </footer>
-      <div style={{ textAlign: "center", padding: "20px", backgroundColor: "#fff", borderTop: "1px solid #ddd", color: "#000" }}>
-        <p style={{ color: "#000" }}>&copy; 2025 Lifehouse Church. All Rights Reserved.</p>
-        <p style={{ color: "#000" }}>Template by <strong>T.RICKS</strong></p>
-        <p style={{ color: "#000" }}>Privacy Policy</p>
-      </div>
-    </div>
+    </div> */}
+
+ 
     </div>
    
   );
