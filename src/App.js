@@ -12,6 +12,7 @@ import Result from './pages/Result';
 import Appointment from './pages/Appointment';
 import BookAppointment from './pages/BookAppointment';
 import Homepage from './pages/Homepage';
+import Qr from "../src/qr generation/Qr"
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
              <Route path='/appointment' element={<Appointment/>}/>
              <Route path='/book-appointment' element={<BookAppointment/>}/>
              <Route path='/homepage' element={<Homepage/>}/>
+             <Route path='/qr' element={<Qr/>}/>
          </Routes>
     </BrowserRouter>
     

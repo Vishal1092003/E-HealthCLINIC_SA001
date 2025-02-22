@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 // import Newmap from './Newmap'
 // import UrlSortner from './UrlSortner'
 // import WeatherForcast from './WeatherForcast'
+
 function Dashboard() {
   return (
     <div>
@@ -45,6 +46,11 @@ function Dashboard() {
          <p>
          To Make an appointment
           <NavLink to='/homepage'>Home Page</NavLink>
+         </p>
+
+          <p>
+         To generate a qr
+          <NavLink to='/qr'>Qr code generation</NavLink>
          </p>
 
     </div>
